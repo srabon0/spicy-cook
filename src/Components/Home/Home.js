@@ -4,8 +4,7 @@ const Home = () => {
     return (
         <div>
             <img className='object-contain' src={banner} alt="" />
-            <h1 className='text-7xl text-slate-50 absolute top-2/4 right-2/4'>The best cook in your town</h1>
-          
+            <h1 className='text-7xl text-slate-50 absolute top-1/3 left-52'>The best cook in your town</h1>
         </div>
     );
 };
