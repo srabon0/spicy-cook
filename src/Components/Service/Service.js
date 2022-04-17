@@ -3,7 +3,7 @@ import React from "react";
 const Service = ({service}) => {
   const {serviceName, img, price , description}= service;
   return (
-    <div>
+    <div className="mb-5">
       <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
           <img

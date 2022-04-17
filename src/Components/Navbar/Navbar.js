@@ -1,16 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import auth from "../../firebase.init";
-import Avatar from "../Footer/Avatar/Avatar";
+import cook from '../../images/spicycooklogo.png'
+import Avatar from "../Avatar/Avatar";
+import { HashLink as ScrollLink } from 'react-router-hash-link';
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
   const handleSignout = () => {
     signOut(auth);
   };
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar sticky top-0 bg-gray-900">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -42,26 +45,20 @@ const Navbar = () => {
             <li>
               <a>Blog</a>
             </li>
+            
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="mx-10 w-52 bg-transparent text-base-100 normal-case text-xl flex items-center">
+          <img className="mx-2" src={cook} alt="" />
           Spicy Cook
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
-          <li>
-            <a>About</a>
-          </li>
-          <li tabIndex="0">
-            <a>Services</a>
-          </li>
-          <li>
-            <a>Blog</a>
-          </li>
+        <ScrollLink to="/home#services">Services</ScrollLink>
         </ul>
       </div>
-      <div className="navbar-end mr-10">
+      <div className="navbar-end mr-10  ">
         {user ?<Avatar key={10} name={user?.displayName} handleSignout={handleSignout} ></Avatar> : 
           <Link to="/login" className="btn mx-10">
             Login
