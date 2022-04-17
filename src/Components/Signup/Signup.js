@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import auth from "../../firebase.init";
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useNavigate } from "react-router-dom";
 const Signup = () => {
-   
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -19,7 +19,8 @@ const Signup = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         await createUserWithEmailAndPassword(email, password);
-       
+        await updateProfile({displayName:name})
+       console.log(name, email,password);
     }
   return (
     <div className="container my-10">
