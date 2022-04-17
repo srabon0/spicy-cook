@@ -1,11 +1,10 @@
 import React from "react";
-
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import auth from "../../firebase.init";
 import cook from '../../images/spicycooklogo.png'
 import Avatar from "../Avatar/Avatar";
-import { HashLink as ScrollLink } from 'react-router-hash-link';
+
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -55,7 +54,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
-        <ScrollLink to="/home#services">Services</ScrollLink>
+        <Link to="/home#services">Services</Link>
         </ul>
       </div>
       <div className="navbar-end mr-10  ">

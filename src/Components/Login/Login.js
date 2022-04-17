@@ -1,5 +1,6 @@
 import React from "react";
 import auth from "../../firebase.init";
+import SocialLogin from '../SocialLogin/SocialLogin'
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -129,6 +130,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+      <SocialLogin></SocialLogin>
     </div>
   );
 };
