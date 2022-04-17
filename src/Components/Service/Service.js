@@ -1,8 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Service = ({service}) => {
-  const {serviceName, img, price , description}= service;
+
+const Service = (props) => {
+  
+  const {id,serviceName, img, price , description} = props.service;
+  let navigate = useNavigate()
+
+    const handleServiceDetails = (id)=>{
+        navigate(`/services/${id}`);
+      }
   return (
+   
+      
     <div className="mb-5">
       <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
@@ -23,10 +33,9 @@ const Service = ({service}) => {
           </p>
           <div class="flex justify-between items-center">
             <span class="text-3xl font-bold text-gray-900 dark:text-white">${price}</span>
-            <a
-            href="#"
-            className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-yellow-600 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
+            <button
+            onClick={()=>handleServiceDetails(id)}
+            className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-yellow-600 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" > 
             Book Now
             <svg
               className="ml-2 -mr-1 w-4 h-4"
@@ -40,12 +49,13 @@ const Service = ({service}) => {
                 clip-rule="evenodd"
               ></path>
             </svg>
-          </a>
+          </button>
         </div>
          
         </div>
       </div>
     </div>
+   
   );
 };
 
