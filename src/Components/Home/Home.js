@@ -1,8 +1,9 @@
 import React from "react";
 import banner from "../../images/topbanner.jpg";
-import Stat from "../../Stat/Stat";
+
 import PeopleAlsoBooked from "../PeopleAlsoBooked/PeopleAlsoBooked";
 import Services from "../Services/Services";
+import Stat from "../Stat/Stat";
 const Home = () => {
   return (
     <>

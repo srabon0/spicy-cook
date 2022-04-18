@@ -6,6 +6,8 @@ import {
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const navigate = useNavigate();
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -36,12 +38,12 @@ const Login = () => {
     console.log(email, password);
   };
   const handleResetPassword = async (event) => {
-    const email = event.target.email.value;
+    const email = event.target.value;
     if (email) {
       await sendPasswordResetEmail(email);
-      console.log("Password reset Email has been sent");
+      toast("Password reset Email has been sent");
     } else {
-      console.log("eamilnot found");
+      toast("eamilnot found");
     }
   };
   return (
@@ -129,6 +131,7 @@ const Login = () => {
             </Link>
           </div>
         </form>
+        <ToastContainer />
       </div>
       <SocialLogin></SocialLogin>
     </div>

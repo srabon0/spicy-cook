@@ -11,6 +11,8 @@ import Checkout from './Components/Checkout/Checkout';
 import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 import { createContext, useState } from 'react';
 import Services from './Components/Services/Services';
+import About from './Components/About/About';
+import Blogs from './Components/Blogs/Blogs';
 
 export const ServiceContext = createContext();
 
@@ -24,6 +26,8 @@ function App() {
       <Route path="/" element={<Home></Home>}></Route>
       <Route path="/home" element={<Home></Home>}></Route>
       <Route path="/services" element={<Services></Services>}></Route>
+      <Route path="/about" element={<About></About>}></Route>
+      <Route path="/blogs" element={<Blogs></Blogs>}></Route>
       <Route path='/checkout'element={
           <RequireAuth>
             <Checkout></Checkout>
