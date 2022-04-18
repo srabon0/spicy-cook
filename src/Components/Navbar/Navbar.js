@@ -15,7 +15,7 @@ const Navbar = () => {
     <div className="navbar sticky top-0 bg-gray-900">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex="0" className="btn btn-ghost lg:hidden">
+          <label tabIndex="0" className="btn btn-base-200 lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -48,13 +48,13 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/" className="mx-10 w-52 bg-transparent text-base-100 normal-case text-xl flex items-center">
-          <img className="mx-2" src={cook} alt="" />
-          Spicy Cook
+          <img className="mx-2 " src={cook} alt="" />
+          <span className="hidden md:block" >Spicy Cook</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
-        <Link to="/home#services">Services</Link>
+        <Link to="/home#services" className="text-white">Services</Link>
         </ul>
       </div>
       <div className="navbar-end mr-10  ">
@@ -64,7 +64,7 @@ const Navbar = () => {
           </Link>
         }
 
-        <Link to="/signup" className="btn">
+        <Link to="/signup" className="btn md:btn-md  sm:btn-sm">
           Sign Up
         </Link>
       </div>

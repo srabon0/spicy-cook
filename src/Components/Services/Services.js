@@ -10,7 +10,7 @@ const Services = () => {
     
       <div className="container" id="home#services">
         <h1 className="my-5 md:text-5xl sm:text-4xl text-slate-600 font-bold text-center">
-          Our Services
+          Services
         </h1>
         <div className="w-3/4 mx-auto  grid grid-cols-1 md:grid-cols-3 md:gap-3">
           {services.map((service) => (
